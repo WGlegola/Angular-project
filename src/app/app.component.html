@@ -8,11 +8,18 @@
 </head>
 <body>
   <hr>
-  <label>Username</label>
-  <input type="text" class="form-control" [(ngModel)]="username">
-  <p>{{username}}</p>
-  <button class="btn btn-primary" [disabled]="username === ''">Reset User</button>
+  <button class="btn btn-primary" (click)="onToggleDetails()">Display Details</button>
+  <p *ngIf="showSecret"> Secret Password = tuna </p>
   <hr>
+  <ng-container 
+    *ngFor="let logItem of log">
+    
+    <div 
+      [ngStyle]="{backgroundColor: logItem >= 5 ? 'blue' : 'transparent'}"
+      [ngClass]="{'white-text' : logItem >=5}">
+      {{logItem}}</div>
+  </ng-container>
+  
   <app-servers></app-servers>
-</body> 
+</body>  
 </html>

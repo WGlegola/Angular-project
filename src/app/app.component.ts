@@ -7,5 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular-project';
-  username = "";
+  showSecret:boolean = false;
+  log:number[]=[];
+
+  onToggleDetails(){
+    this.showSecret = !this.showSecret;
+    this.log.push(this.log.length + 1);
+  }
 }
