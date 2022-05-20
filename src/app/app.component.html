@@ -7,6 +7,12 @@
   <title>Document</title>
 </head>
 <body>
+  <hr>
+  <label>Username</label>
+  <input type="text" class="form-control" [(ngModel)]="username">
+  <p>{{username}}</p>
+  <button class="btn btn-primary" [disabled]="username === ''">Reset User</button>
+  <hr>
   <app-servers></app-servers>
-</body>
+</body> 
 </html>
